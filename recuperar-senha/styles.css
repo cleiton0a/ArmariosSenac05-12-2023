@@ -1,0 +1,82 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+#Senac {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    color: #333;
+}
+
+
+p {
+    color: #666;
+}
+
+ 
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        padding: 10px;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+}
