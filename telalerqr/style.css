@@ -14,10 +14,12 @@ body {
     margin: 20px auto;
     text-align: center;
 }
-#Senac {
-    max-width: 100%;
+img {
+    max-width: 90%;
     height: auto;
-}
+    display: block;
+    margin: 0 auto;
+  }
 #qr-reader {
     max-width: 100%;
     overflow: hidden;
@@ -41,3 +43,29 @@ body {
         width: 100%;
     }
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+  }
+  nav a:hover {
+    background-color: #555;
+  }

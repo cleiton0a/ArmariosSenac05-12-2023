@@ -1,18 +1,57 @@
-document.addEventListener('DOMContentLoaded', function () {
-   
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function (event) {
+function createResetButton() {
+  const buttonContainer = document.getElementById('buttonContainer');
 
-        event.preventDefault();
-        const email = document.getElementById('email').value;
+  const resetButton = document.createElement('button');
+  resetButton.textContent = 'gerar nova senha senha';
 
-        if (validateEmail(email)) {
+  resetButton.addEventListener('click', function () {
+    const usuarioInput = document.getElementById('usuarioInput');
+    const emailInput = document.getElementById('emailInput');
+    const goBackButton = document.getElementById('goBackButton');
 
-            alert('Solicitação de recuperação de senha enviada para ' + email);
-o
-        } else {
-
-            alert('Por favor, insira um e-mail válido.');
-        }
-    })
+    goBackButton.addEventListener('click', function () {
+      window.location.href="../telalerqr/index.html";
     });
+
+    const usuario = usuarioInput.value;
+    const email = emailInput.value;
+
+    
+    if (!usuario || !email) {
+      console.error('Please enter both user and email');
+      return;
+    }
+
+    const resetUrl = 'http://www.armariosapi.somee.com/api/Usuarios/RedefinirSenha';
+    const resetData = {
+      usuario: usuario,
+      email: email
+    };
+
+    fetch(resetUrl, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(resetData)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(jsonResponse => {
+        console.log('Password Reset Response:', jsonResponse);
+        // You might want to add further logic here based on the response
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+
+  buttonContainer.appendChild(resetButton);
+}
+
+createResetButton();
