@@ -12,7 +12,7 @@ async function authenticate() {
       "accept": "application/json"
     };
 
-    
+    // Use HTTPS for the API URL
     const response = await fetch("https://www.armariosapi.somee.com/api/Usuarios/Login", {
       method: "POST",
       headers: headers,
@@ -20,7 +20,7 @@ async function authenticate() {
     });
 
     if (!response.ok) {
-     
+      // Handle non-successful responses
       const errorMessage = await response.text();
       throw new Error(`Error: ${response.status} - ${errorMessage}`);
     }
@@ -42,4 +42,5 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   authenticate();
 });
+
 
