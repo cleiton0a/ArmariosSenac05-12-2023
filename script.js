@@ -7,7 +7,7 @@ async function authenticate() {
   const headers = {
     "Content-Type": "application/json", "accept": "application/json"
   }
-  const response = await fetch("http://www.armariosapi.somee.com/api/Usuarios/Login", { headers: headers, method: "POST", body: JSON.stringify(usuario) })
+  const response = await fetch("http://www.armariosapi.somee.com/api/Usuarios/Login",{ headers: headers, method: "POST", body: JSON.stringify(usuario)})
   const responsejson = await response.json()
   console.log(responsejson)
 
