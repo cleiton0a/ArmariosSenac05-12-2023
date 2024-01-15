@@ -20,7 +20,7 @@ async function authenticate() {
     });
 
     if (!response.ok) {
-      // Handle non-successful responses
+     
       const errorMessage = await response.text();
       throw new Error(`Error: ${response.status} - ${errorMessage}`);
     }
@@ -32,10 +32,10 @@ async function authenticate() {
       localStorage.setItem('token', responsejson.token);
       window.location.href = "/telalerqr";
     }
-  } catch (error) {
-    console.error('Error during authentication:', error);
-  }
-}
+ // } catch (error) {
+  //  console.error('Error during authentication:', error);
+ // }
+//}
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
