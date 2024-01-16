@@ -36,9 +36,7 @@ async function authenticate() {
       localStorage.setItem('token', responsejson.token);
       window.location.href = "/telalerqr";
     }
-  } catch (error) {
-    console.error('Error during authentication:', error);
-  }
+  } 
 }
 
 
