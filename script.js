@@ -17,7 +17,7 @@ async function authenticate() {
     };
 
     
-    const response = await fetch("http://www.armariosapi.somee.com/api/Usuarios", {
+    const response = await fetch("http://www.armariosapi.somee.com/api/login", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(usuario)
