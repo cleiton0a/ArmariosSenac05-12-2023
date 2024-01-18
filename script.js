@@ -13,11 +13,12 @@ async function authenticate() {
       "accept": "application/json"
     };
 
-    const response = await fetch("http://www.armariosapi.somee.com/api/Usuarios/Login", {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(usuario)
-    });
+    const response = await fetch("https://www.armariosapi.somee.com/api/Usuarios/Login", {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(usuario),
+  mode: 'no-cors'
+});
 
     if (!response.ok) {
       const errorMessage = await response.text();
@@ -41,4 +42,3 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   authenticate();
 });
-
